@@ -1,12 +1,19 @@
-import FormTest from "./comps/antd/form/FormTest" 
-import MyFormTest from "./comps/antd/form/MyFormTest" 
+// import FormTest from "./comps/antd/form/FormTest" 
+// import MyFormTest from "./comps/antd/form/MyFormTest" 
+import ReduxTest from "./comps/redux/ReduxTest" 
+import ReactReduxTest from "./comps/redux/ReactReduxTest" 
+
+
+import { Provider } from "react-redux"
+import store from "./comps/redux/store"
 
 function App() {
   return (
-    <div className="App">
-      <FormTest></FormTest>
-      <MyFormTest></MyFormTest>
-    </div>
+    <Provider store={store}>
+      {/* <FormTest></FormTest>
+      <MyFormTest></MyFormTest> */}
+      <ReactReduxTest />
+    </Provider>
   );
 }
 
