@@ -1,20 +1,9 @@
-import { createStore, applyMiddleware } from "redux"
+import { createStore, applyMiddleware, combineReducers } from "redux"
 import logger from "redux-logger"
 import thunk from "redux-thunk"
+import { counterReducer } from "./counter"
 
-function counterReducer(state = 0, action) {
-    const num = action.payload || 1
-
-    switch (action.type) {
-        case 'add':
-            return state  + num;
-        case 'minus':
-            return state - num;
-        default:
-            return state
-
-    }
-}
+console.log(counterReducer)
 
 const store = createStore(
     counterReducer,

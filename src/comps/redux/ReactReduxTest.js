@@ -1,16 +1,10 @@
 import React from "react"
 import { connect } from "react-redux"
-
+import { add, minus, asyncAdd } from "./store/counter"
 @connect(
     state => ({ counter: state }),
     {
-        add: () => ({type: 'add'}),
-        minus: () => ({type: 'minus'}),
-        asyncAdd: () => dispatch => {
-            setTimeout(() => {
-                dispatch({type: 'add', payload: 2})
-            },1000)
-        }
+        add, minus, asyncAdd
     }
 )
 class ReactReduxTest extends React.Component{
