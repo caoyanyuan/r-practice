@@ -7,7 +7,9 @@ function App() {
     <div>
       {/* <FormTest></FormTest>
       <MyFormTest></MyFormTest> */}
-      <ReactReduxTest />
+
+      <ReduxTest />
+      {/* <ReactReduxTest /> */}
     </div>
   );
 }
