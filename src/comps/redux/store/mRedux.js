@@ -2,7 +2,6 @@
 export function createStore(reducer, enhancer) {
 
     if(enhancer) {
-        console.log(typeof enhancer)
         return enhancer(createStore)(reducer)
     }
 

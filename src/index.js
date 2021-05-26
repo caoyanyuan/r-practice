@@ -5,13 +5,14 @@ import "antd/dist/antd.css"
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { Providers } from "./comps/redux/store/mreact-redux"
 import { Provider } from "react-redux"
 import store from "./comps/redux/store"
 
 ReactDOM.render(
-  <Provider store={store}>
+  <Providers store={store}>
     <App />
-  </Provider>
+  </Providers>
   ,
   document.getElementById('root')
 );

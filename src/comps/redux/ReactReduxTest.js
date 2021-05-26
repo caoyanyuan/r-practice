@@ -1,5 +1,5 @@
 import React from "react"
-import { connect } from "react-redux"
+import { connect } from "./store/mreact-redux"
 import { add, minus, asyncAdd } from "./store/counter"
 @connect(
     state => ({ counter: state }),
@@ -9,11 +9,11 @@ import { add, minus, asyncAdd } from "./store/counter"
 )
 class ReactReduxTest extends React.Component{
     render() {
-        console.log(this.props)
         return (
             <div>
+                <div>react redux test</div>
                 {this.props.counter}
-                <button onClick={this.props.asyncAdd}>+</button>
+                <button onClick={() => this.props.asyncAdd()}>+</button>
             </div>
             
         )
