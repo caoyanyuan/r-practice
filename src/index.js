@@ -7,12 +7,12 @@ import reportWebVitals from './reportWebVitals';
 
 import { Providers } from "./comps/redux/store/mreact-redux"
 import { Provider } from "react-redux"
-import store from "./comps/redux/store"
+import store from "./comps/router/store"
 
 ReactDOM.render(
-  <Providers store={store}>
+  <Provider store={store}>
     <App />
-  </Providers>
+  </Provider>
   ,
   document.getElementById('root')
 );
