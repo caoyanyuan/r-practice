@@ -1,25 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import "antd/dist/antd.css"
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "./mreact"
+import ReactDom from "./mreact-dom"
 
-import { Providers } from "./comps/redux/store/mreact-redux"
-import { Provider } from "react-redux"
-// import store from "./comps/router/store"
+function Comp(props) {
+    return (
+        <div> hi {props.name}</div>
+    )
+}
 
-import store from "./comps/redux-saga/store"
+class Comp2 extends React.Component{
+    render() {
+        return <h2>hello {this.props.name}</h2>
+    }
+}
 
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>
-  ,
-  document.getElementById('root')
-);
+const jsx = (
+    <div id="demo">
+        <span>hi</span>
+        <Comp name="function comp" >hahah</Comp>
+        <Comp2 name="class comp" />
+    </div>
+)
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDom.render(jsx, document.getElementById('root'))
