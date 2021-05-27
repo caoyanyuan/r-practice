@@ -1,4 +1,4 @@
-import {  BrowserRouter,Route,Redirect } from "./my-router"
+import {  BrowserRouter,Route,Redirect } from "react-router-dom"
 import React from "react"
 import Login from "./Login"
 import { connect } from "react-redux"

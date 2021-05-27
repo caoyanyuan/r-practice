@@ -7,7 +7,9 @@ import reportWebVitals from './reportWebVitals';
 
 import { Providers } from "./comps/redux/store/mreact-redux"
 import { Provider } from "react-redux"
-import store from "./comps/router/store"
+// import store from "./comps/router/store"
+
+import store from "./comps/redux-saga/store"
 
 ReactDOM.render(
   <Provider store={store}>

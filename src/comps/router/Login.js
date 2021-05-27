@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router'
 import { d_login } from "./store/user.redux"
+import { login } from "../redux-saga/store/user.redux"
 
 export class Login extends React.Component {
     constructor(props) {
@@ -44,16 +45,18 @@ const mapDispatchToProps = {
     d_login
 }
 
-const Login2 = connect(
+const LoginSaga = connect(
     state => ({isLogin: state.user.isLogin}),
-    { d_login }
+    {
+        login: () => ({type: 'loginSuccess'})
+    }
 )(
-    function({isLogin, location, d_login}){
+    function({isLogin, location, login}){
         if(isLogin) return <Redirect to={location.state.redirect} />
         return (
             <div>
                 登录界面
-                <button onClick={() => d_login()}>登录</button>
+                <button onClick={() => login('tom')}>登录</button>
             </div>
         )
     }
@@ -61,6 +64,6 @@ const Login2 = connect(
 
 
 //export default connect(mapStateToProps, mapDispatchToProps)(Login)
-export default Login2
+export default LoginSaga
 
 

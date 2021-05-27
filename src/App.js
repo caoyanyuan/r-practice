@@ -3,6 +3,7 @@
 import ReduxTest from "./comps/redux/ReduxTest" 
 import ReactReduxTest from "./comps/redux/ReactReduxTest" 
 import TryRoute from "./comps/router/TryRoute"
+import React from "react"
 function App() {
   return (
     <div>
